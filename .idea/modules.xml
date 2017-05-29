@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/WordRepititionFinder.iml" filepath="$PROJECT_DIR$/WordRepititionFinder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WordBuilder.iml" filepath="$PROJECT_DIR$/WordBuilder.iml" />
     </modules>
   </component>
 </project>
