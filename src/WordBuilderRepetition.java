@@ -4,11 +4,15 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * defines a word builder that builds different sets of words from given parameters.
- * Words are allowed to have repeated characters
+ * Defines a word builder that builds different sets of words from given parameters.
+ * <ul>
+ *     <li>Words can have repeated characters</li>
+ *     <li>Words are of a fixed length</li>
+ *     <li>Words are generated from a specific set of characters</li>
+ * </ul>
  * @author Askes
  */
-public class WordBuilder {
+public class WordBuilderRepetition {
 
     public static final char[] ALPHEBET = "abcdefghijklmnopqrstuvwxyz".toCharArray();
 
@@ -20,17 +24,15 @@ public class WordBuilder {
      * defines the number of CHARACTERS in our word
      */
     public final int WORD_LENGTH;
-    public final boolean ALLOW_REPEATS;
 
     /**
      * creates a new Word builder
      * @param characters the possible CHARACTERS to be used in the word
      * @param wordLength the length of the word
      */
-    public WordBuilder(char[] characters, int wordLength, boolean allowRepeats) {
+    public WordBuilderRepetition(char[] characters, int wordLength) {
         this.CHARACTERS = characters;
         this.WORD_LENGTH = wordLength;
-        this.ALLOW_REPEATS = allowRepeats;
     }
 
 
@@ -121,7 +123,7 @@ public class WordBuilder {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        WordBuilder that = (WordBuilder) o;
+        WordBuilderRepetition that = (WordBuilderRepetition) o;
         return WORD_LENGTH == that.WORD_LENGTH &&
                 Arrays.equals(CHARACTERS, that.CHARACTERS);
     }
@@ -132,9 +134,9 @@ public class WordBuilder {
     }
 
     public static void main(String args[]){
-        WordBuilder wordBuilder = new WordBuilder(WordBuilder.ALPHEBET,26, false);
-//        System.out.println("Words with no consectitive letters: " + wordBuilder.countNoConsecutive());
-        System.out.println(wordBuilder.g);
+        WordBuilderRepetition wordBuilder = new WordBuilderRepetition(new char[]{'A','B','C'},5);
+        System.out.println("Words with no consectitive letters: " + wordBuilder.countNoConsecutive());
+//        System.out.println(wordBuilder.g);
     }
 
 }
